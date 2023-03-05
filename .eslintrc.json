@@ -1,0 +1,33 @@
+{
+	"root": true,
+	"extends": [
+		"@kalimahapps",
+		"./.eslintrc-auto-import.json"
+	],
+	"overrides": [
+		{
+			"files": [
+				"*.js",
+				"*.jsx"
+			],
+			"parser": "babel-eslint",
+			"extends": [
+				"@kalimahapps"
+			]
+		},
+		{
+			"files": [
+				"*.ts",
+				"*.tsx"
+			],
+			"extends": [
+				"./.eslintrc-auto-import.json"
+			]
+		}
+	],
+	"ignorePatterns": [
+		"out",
+		"dist",
+		"**/*.d.ts"
+	]
+}
