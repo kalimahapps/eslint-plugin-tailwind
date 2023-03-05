@@ -16,9 +16,7 @@
 <a target="_blank" href="https://www.npmjs.com/package/@kalimahapps/eslint-plugin-tailwind">
   <img src="https://img.shields.io/npm/dt/@kalimahapps/eslint-plugin-tailwind.svg">
 </a>
-<img src="https://img.shields.io/badge/vue-3-%2342b883">
-</a>
-<img src="https://img.shields.io/github/license/kalimah-apps/@kalimahapps/eslint-plugin-tailwind.svg">
+<img src="https://img.shields.io/github/license/kalimahapps/eslint-plugin-tailwind">
 </p>
 
 <p align="center">
