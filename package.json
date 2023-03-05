@@ -1,6 +1,6 @@
 {
 	"name": "@kalimahapps/eslint-plugin-tailwind",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Provide eslint rules for tailwindcss",
 	"main": "index.js",
 	"scripts": {},
@@ -23,7 +23,7 @@
 	"engines": {
 		"node": ">=14.16"
 	},
-	"devDependencies": {
+	"dependencies": {
 		"lodash.orderby": "^4.6.0"
 	}
 }

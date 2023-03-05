@@ -3,11 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   lodash.orderby: ^4.6.0
 
-devDependencies:
+dependencies:
   lodash.orderby: 4.6.0
 
 packages:
 
   /lodash.orderby/4.6.0:
     resolution: {integrity: sha512-T0rZxKmghOOf5YPnn8EY5iLYeWCpZq8G41FfqoVHH5QDTAFaghJRmAdLiadEDq+ztgM2q5PjA+Z1fOwGrLgmtg==}
-    dev: true
+    dev: false
