@@ -105,6 +105,9 @@ You need to install ESLint extension in VSCode. You can find it [here](https://m
 <br>
 
 ## Other projects
+### [KalimahApps Eslint Config](https://www.npmjs.com/package/@kalimahapps/eslint-config)
+Comprehensive eslint rules for vue projects with typescript
+
 ### [Vue Icons](https://www.npmjs.com/package/@kalimahapps/vue-icons)
 55,000+ SVG icons from popular icon sets that you can add seamlessly to your vue projects
 
