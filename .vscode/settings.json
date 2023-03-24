@@ -1,19 +1,57 @@
 {
-  "editor.cursorStyle": "line",
-  "editor.cursorBlinking": "smooth",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell",
-      "args": [
-        "-ExecutionPolicy",
-        "Bypass"
-      ]
-    }
+  "cSpell.allowCompoundWords": true,
+  "cSpell.language": "en,en-US",
+  "cSpell.words": [
+    "kalimahapps"
+  ],
+  "css.validate": false,
+  "editor.autoIndent": "advanced",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
-  "terminal.integrated.tabs.enabled": true,
+  "editor.codeLens": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "line",
+  "editor.defaultFormatter": null,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
   "editor.lineNumbers": "interval",
+  "editor.snippetSuggestions": "bottom",
+  "editor.stickyScroll.enabled": true,
+  "errorLens.errorColor": "rgb(199 76 102 / 10%)",
+  "errorLens.errorTextColor": "rgba(255,255,255,0.3)",
+  "errorLens.hintColor": "rgba(20,140,140,0.1)",
+  "errorLens.hintTextColor": "rgba(255,255,255,0.3)",
+  "errorLens.infoColor": "rgba(0,200,0,0.1)",
+  "errorLens.infoTextColor": "rgba(240,240,240,0.3)",
+  "errorLens.warningColor": "rgb(255 213 128 / 5%)",
+  "errorLens.warningTextColor": "rgba(255,255,255,0.3)",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.packageManager": "pnpm",
+  "eslint.validate": [
+    "javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"json",
+		"jsonc",
+		"json5"
+  ],
+  "explorer.openEditors.visible": 0,
+  "files.eol": "\n",
+  "files.exclude": {
+    "out": false
+  },
+  "files.trimTrailingWhitespace": true,
+  "git.showPushSuccessNotification": true,
+  "gitlens.codeLens.enabled": false,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "prettier.enable": false,
+  "scss.validate": false,
+  "search.collapseResults": "alwaysExpand",
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -27,60 +65,25 @@
     "**/coverage": true,
     "**/docs": true,
   },
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
+  "search.quickOpen.includeHistory": false,
+  "tailwindCSS.emmetCompletions": true,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass"
+      ]
+    }
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "eslint.packageManager": "pnpm",
-  "editor.defaultFormatter": null,
-  "prettier.enable": false,
-  "cSpell.allowCompoundWords": true,
-  "cSpell.language": "en,en-US",
-  "files.eol": "\n",
-  "search.collapseResults": "alwaysExpand",
-  "editor.formatOnType": false,
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
-  "editor.autoIndent": "advanced",
-  "git.showPushSuccessNotification": true,
-  "editor.snippetSuggestions": "bottom",
+  "terminal.integrated.tabs.enabled": true,
+  "typescript.tsc.autoDetect": "off",
+  "typescript.tsdk": "node_modules\\typescript\\lib",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.tree.indent": 20,
-  "files.trimTrailingWhitespace": true,
-  "explorer.openEditors.visible": 0,
-  "tailwindCSS.emmetCompletions": true,
-  "css.validate": false,
-  "scss.validate": false,
-  "editor.codeLens": true,
-  "search.quickOpen.includeHistory": false,
-  "errorLens.errorColor": "rgb(199 76 102 / 10%)",
-  "errorLens.errorTextColor": "rgba(255,255,255,0.3)",
-  "errorLens.warningColor": "rgb(255 213 128 / 5%)",
-  "errorLens.warningTextColor": "rgba(255,255,255,0.3)",
-  "errorLens.infoColor": "rgba(0,200,0,0.1)",
-  "errorLens.infoTextColor": "rgba(240,240,240,0.3)",
-  "errorLens.hintColor": "rgba(20,140,140,0.1)",
-  "errorLens.hintTextColor": "rgba(255,255,255,0.3)",
-  "files.exclude": {
-    "out": false
-  },
-  "typescript.tsc.autoDetect": "off",
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "editor.stickyScroll.enabled": true,
-  "markdown.updateLinksOnFileMove.enabled": "prompt",
-  "gitlens.codeLens.enabled": false,
-  "cSpell.words": [
-    "kalimahapps"
-  ],
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },

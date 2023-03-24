@@ -1,15 +1,23 @@
 {
 	"name": "@kalimahapps/eslint-plugin-tailwind",
-	"version": "1.0.2",
 	"description": "Provide eslint rules for tailwindcss",
-	"main": "index.js",
-	"scripts": {},
+	"author": "khr2003",
+	"version": "1.0.3",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/kalimahapps/eslint-plugin-tailwind.git"
 	},
 	"bugs": {
 		"url": "https://github.com/kalimahapps/eslint-plugin-tailwind/issues"
+	},
+	"license": "MIT",
+	"scripts": {},
+	"dependencies": {
+		"lodash.orderby": "^4.6.0"
+	},
+	"devDependencies": {
+		"@kalimahapps/eslint-config": "^1.1.1",
+		"eslint": "^8.36.0"
 	},
 	"keywords": [
 		"tailwindcss",
@@ -18,12 +26,8 @@
 		"vue",
 		"vue3"
 	],
-	"author": "khr2003",
-	"license": "MIT",
+	"main": "index.js",
 	"engines": {
 		"node": ">=14.16"
-	},
-	"dependencies": {
-		"lodash.orderby": "^4.6.0"
 	}
 }
