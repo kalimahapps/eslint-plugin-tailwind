@@ -109,7 +109,7 @@ You need to install ESLint extension in VSCode. You can find it [here](https://m
 Comprehensive eslint rules for vue projects with typescript
 
 ### [Vue Icons](https://www.npmjs.com/package/@kalimahapps/vue-icons)
-55,000+ SVG icons from popular icon sets that you can add seamlessly to your vue projects
+60,000+ SVG icons from popular icon sets that you can add seamlessly to your vue projects
 
 ### [Vue Popper](https://www.npmjs.com/package/@kalimahapps/vue-popper)
 A tooltip component for Vue 3 based on popper.js

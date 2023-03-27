@@ -4,6 +4,6 @@ const multiline = require('./rules/multiline.js');
 module.exports = {
 	rules: {
 		sort,
-		multiline
+		multiline,
 	},
 };
