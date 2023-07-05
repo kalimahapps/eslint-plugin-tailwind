@@ -107,8 +107,11 @@ class TailwindMultiLine {
 		if (lineLength > maxLen) {
 			this.errorType = 'multi-line';
 
+			// Set the spacing character to tab or space
+			const spacingCharacter = isTabbed ? '\t' : ' ';
+
 			// Repeat the spacing character to the length of the spacing
-			const spacingString = '\t'.repeat(spacing.length + 1);
+			const spacingString = spacingCharacter.repeat(spacing.length + 1);
 			return classes.join(`\n${spacingString}`);
 		}
 
