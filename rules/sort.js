@@ -145,7 +145,7 @@ class Tailwind {
 
 		// Get the space before the second class
 		const find = splitClasses[1].match(/^(?<space>\s+)/u);
-		this.space = `\n${find.groups.space || ' '}`;
+		this.space = find === null ? '\n ' : `\n${find.groups.space}`;
 
 		const cleanClasses = splitClasses.reduce((accumulator, item) => {
 			const trimmedItem = item.trim();
@@ -239,9 +239,12 @@ class Tailwind {
 			this.sortedClasses.push(className);
 			this.removeFromArray(classListClone, className);
 
-			// Find all the classes that have the same classname
-			// Some tailwind classes have a dash in them, so we need
-			// to check for the value of the class name without the dash
+			/*
+			Find all the classes that have the same classname.
+			Some tailwind classes have a dash like (text-sm, pr-2),
+			so we need to check for the value of the class
+			name without the dash
+			*/
 			const [classWithoutDash] = className.split('-');
 
 			const classVariants = classListClone.filter((item) => {
