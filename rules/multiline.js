@@ -44,7 +44,6 @@ class TailwindMultiLine {
 
 		let errorMessage = 'Classes should be in multiple lines';
 		if (this.errorType !== 'multi-line') {
-			console.log('inside');
 			errorMessage = 'Classes should be in a single line';
 		}
 
@@ -67,9 +66,10 @@ class TailwindMultiLine {
 	 * @param  {Array}  classes List of classes to join
 	 * @return {string}         Joined classes
 	 */
+	/* eslint complexity: ["warn", 7] */
 	joinClasses(classes) {
 		const { options } = this.context;
-		const { maxLen = 80 } = options[0] || {};
+		const { maxLen: maxLength = 80 } = options[0] || {};
 		const { loc: attributeLoc } = this.node;
 
 		// Get start of the line
@@ -104,7 +104,7 @@ class TailwindMultiLine {
 		// Calculate the length of the line
 		const lineLength = classesLength + (spaceSize * spacing.length) + classesColStart;
 
-		if (lineLength > maxLen) {
+		if (lineLength > maxLength) {
 			this.errorType = 'multi-line';
 
 			// Set the spacing character to tab or space
