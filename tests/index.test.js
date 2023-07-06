@@ -33,12 +33,16 @@ ruleTester.run('multiline', multlineRule, {
 	],
 	invalid: [
 		{
-			code: '<template><div class="text-red-500 text-blue-500 text-green-500 text-yellow-500 text-purple-500"></div></template>',
-			output: `<template><div class="text-red-500
-											text-blue-500
-											text-green-500
-											text-yellow-500
-											text-purple-500"></div></template>`,
+			code: `<template>
+                <div class="text-red-500 text-blue-500 text-green-500 text-yellow-500 text-purple-500"></div>
+                </template>`,
+			output: `<template>
+                <div class="text-red-500
+                 text-blue-500
+                 text-green-500
+                 text-yellow-500
+                 text-purple-500"></div>
+                </template>`,
 			errors: [{ message: 'Classes should be in multiple lines' }],
 		},
 		{
