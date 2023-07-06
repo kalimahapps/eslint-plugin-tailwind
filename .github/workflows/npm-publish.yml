@@ -1,0 +1,24 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup pnpm and install dependencies
+        uses: pnpm/action-setup@v2.2.4
+        with:
+         version: latest
+          
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: pnpm install
+      - run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
