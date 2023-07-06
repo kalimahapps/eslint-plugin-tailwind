@@ -104,6 +104,9 @@ You need to install ESLint extension in VSCode. You can find it [here](https://m
 <br>
 <br>
 
+> Please note that the indentation of for the classes in multiline rule will follow the indentation of the parent. i.e. spaces will be used if the parent is using spaces and tabs will be used if the parent is using tabs
+
+
 ## Other projects
 ### [KalimahApps Eslint Config](https://www.npmjs.com/package/@kalimahapps/eslint-config)
 Comprehensive eslint rules for vue projects with typescript
