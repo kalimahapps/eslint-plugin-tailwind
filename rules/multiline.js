@@ -115,7 +115,7 @@ class TailwindMultiLine {
 
 			// Repeat the spacing character to the length of the spacing
 			const spacingString = spacingCharacter.repeat(spacing.length + tabRepeat);
-			return classes.join(`\n${spacingString}`);
+			return `\n${spacingString}${classes.join(`\n${spacingString}`)}\n${spacingString}`;
 		}
 
 		this.errorType = 'single-line';
@@ -140,14 +140,16 @@ class TailwindMultiLine {
 
 			// Check if item includes whitespace
 			const hasWhitespace = trimmedItem.match(/\s/u);
-			if (hasWhitespace === null) {
+			if (hasWhitespace === null && trimmedItem.length > 0) {
 				accumulator.push(trimmedItem);
 				return accumulator;
 			}
 
 			// Split the item by whitespace
 			const splitItem = trimmedItem.split(/\s+/u);
-			accumulator.push(...splitItem);
+			if (splitItem.length > 0 && splitItem[0].length > 0) {
+				accumulator.push(...splitItem);
+			}
 			return accumulator;
 		}, []);
 		return cleanClasses;

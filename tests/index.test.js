@@ -23,10 +23,12 @@ ruleTester.run('multiline', multlineRule, {
 		},
 		{
 			code: `<template>
-					<div class="text-red-500
+					<div class="
+						text-red-500
 						text-blue-500
 						text-green-500
-						text-yellow-500"
+						text-yellow-500
+						"
 					></div>
 				`,
 		},
@@ -37,11 +39,13 @@ ruleTester.run('multiline', multlineRule, {
                 <div class="text-red-500 text-blue-500 text-green-500 text-yellow-500 text-purple-500"></div>
                 </template>`,
 			output: `<template>
-                <div class="text-red-500
+                <div class="
+                    text-red-500
                     text-blue-500
                     text-green-500
                     text-yellow-500
-                    text-purple-500"></div>
+                    text-purple-500
+                    "></div>
                 </template>`,
 			errors: [{ message: 'Classes should be in multiple lines' }],
 		},
@@ -51,11 +55,13 @@ ruleTester.run('multiline', multlineRule, {
 					></div>
 				</template>`,
 			output: `<template><div
-					class="text-red-500
+					class="
+						text-red-500
 						text-blue-500
 						text-green-500
 						text-yellow-500
-						text-purple-500"
+						text-purple-500
+						"
 					></div>
 				</template>`,
 			errors: [{ message: 'Classes should be in multiple lines' }],
@@ -74,11 +80,13 @@ ruleTester.run('multiline', multlineRule, {
 						grid"
 				></div></template>`,
 			output: `<template>
-				<div class="text-red-500
+				<div class="
+					text-red-500
 					text-purple-500
 					grid-cols-2
 					bg-gray-200
-					grid"
+					grid
+					"
 				></div></template>`,
 			errors: [{ message: 'Classes should be in multiple lines' }],
 		},
@@ -87,7 +95,8 @@ ruleTester.run('multiline', multlineRule, {
 				<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
 				</template>`,
 			output: `<template>
-				<div class="w-11
+				<div class="
+					w-11
 					h-6
 					bg-gray-200
 					peer-focus:outline-none
@@ -111,9 +120,32 @@ ruleTester.run('multiline', multlineRule, {
 					after:w-5
 					after:transition-all
 					dark:border-gray-600
-					peer-checked:bg-blue-600"></div>
+					peer-checked:bg-blue-600
+					"></div>
 				</template>`,
 			errors: [{ message: 'Classes should be in multiple lines' }],
+		},
+		{
+			code: `<template>
+					<div class="
+						text-red-500
+						text-blue-500
+
+						text-green-500
+						text-yellow-500
+						"
+					></div>
+				`,
+			output: `<template>
+					<div class="
+						text-red-500
+						text-blue-500
+						text-green-500
+						text-yellow-500
+						"
+					></div>
+				`,
+			errors: [{message: 'Classes should be in multiple lines'}],
 		},
 	],
 });
