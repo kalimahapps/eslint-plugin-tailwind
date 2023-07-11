@@ -66,7 +66,7 @@ class TailwindMultiLine {
 	 * @param  {Array}  classes List of classes to join
 	 * @return {string}         Joined classes
 	 */
-	/* eslint complexity: ["warn", 7] */
+	/* eslint complexity: ["warn", 8] */
 	joinClasses(classes) {
 		const { options } = this.context;
 		const { maxLen: maxLength = 80 } = options[0] || {};
@@ -110,8 +110,11 @@ class TailwindMultiLine {
 			// Set the spacing character to tab or space
 			const spacingCharacter = isTabbed ? '\t' : ' ';
 
+			// Set the amount of spacing characters to indent to the class attribute
+			const tabRepeat = isTabbed ? 1 : 4;
+
 			// Repeat the spacing character to the length of the spacing
-			const spacingString = spacingCharacter.repeat(spacing.length + 1);
+			const spacingString = spacingCharacter.repeat(spacing.length + tabRepeat);
 			return classes.join(`\n${spacingString}`);
 		}
 
