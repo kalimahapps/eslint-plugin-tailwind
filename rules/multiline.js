@@ -69,7 +69,7 @@ class TailwindMultiLine {
 	/* eslint complexity: ["warn", 8] */
 	joinClasses(classes) {
 		const { options } = this.context;
-		const { maxLen: maxLength = 80 } = options[0] || {};
+		const { maxLen: maxLength = 80, quotesOnNewLine = false } = options[0] || {};
 		const { loc: attributeLoc } = this.node;
 
 		// Get start of the line
@@ -115,7 +115,9 @@ class TailwindMultiLine {
 
 			// Repeat the spacing character to the length of the spacing
 			const spacingString = spacingCharacter.repeat(spacing.length + tabRepeat);
-			return `\n${spacingString}${classes.join(`\n${spacingString}`)}\n${spacingString}`;
+			return quotesOnNewLine
+				? `\n${spacingString}${classes.join(`\n${spacingString}`)}\n${spacingString}`
+				: classes.join(`\n${spacingString}`);
 		}
 
 		this.errorType = 'single-line';
