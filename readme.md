@@ -64,7 +64,7 @@ module.exports = {
 
 The following options can be set to the mutiline rule:
 - `maxLen`: break classes as soon as the line length is longer than this (and join if the line is smaller)
-- `quotesOnNewLine`: put the quotes on different lines as the first and last class
+- `quotesOnNewLine`: put the quotes on different lines to the first and last class
 
 ```js
 module.exports = {
