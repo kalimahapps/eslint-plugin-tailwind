@@ -62,7 +62,9 @@ module.exports = {
 }
 ```
 
-You can apply maxLen rule to tailwind classes by adding this to your `.eslintrc.js` file
+The following options can be set to the mutiline rule:
+- `maxLen`: break classes as soon as the line length is longer than this (and join if the line is smaller)
+- `quotesOnNewLine`: put the quotes on different lines to the first and last class
 
 ```js
 module.exports = {
@@ -72,7 +74,8 @@ module.exports = {
 	"@kalimahapps/tailwind/multiline": [
 		"warn",
 		{
-			"maxLen": 100
+			"maxLen": 100,
+      "quotesOnNewLine": true
 		}
 	]
 	}

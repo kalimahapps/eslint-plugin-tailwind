@@ -30,6 +30,18 @@ ruleTester.run('multiline', multlineRule, {
 					></div>
 				`,
 		},
+		{
+			code: `<template>
+					<div class="
+						text-red-500
+						text-blue-500
+						text-green-500
+						text-yellow-500
+						"
+					></div>
+				`,
+			options: [{ quotesOnNewLine: true }],
+		},
 	],
 	invalid: [
 		{
@@ -114,6 +126,45 @@ ruleTester.run('multiline', multlineRule, {
 					peer-checked:bg-blue-600"></div>
 				</template>`,
 			errors: [{ message: 'Classes should be in multiple lines' }],
+		},
+		{
+			code: `<template>
+					<div class="
+						text-red-500
+						text-blue-500
+						text-green-500
+						text-yellow-500
+						"
+					></div>
+				`,
+			output: `<template>
+					<div class="text-red-500
+						text-blue-500
+						text-green-500
+						text-yellow-500"
+					></div>
+				`,
+			errors: [{message: 'Classes should be in multiple lines'}],
+		},
+		{
+			code: `<template>
+					<div class="text-red-500
+						text-blue-500
+						text-green-500
+						text-yellow-500"
+					></div>
+				`,
+			output: `<template>
+					<div class="
+						text-red-500
+						text-blue-500
+						text-green-500
+						text-yellow-500
+						"
+					></div>
+				`,
+			options: [{quotesOnNewLine: true}],
+			errors: [{message: 'Classes should be in multiple lines'}],
 		},
 	],
 });
