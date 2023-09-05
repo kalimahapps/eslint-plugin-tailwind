@@ -144,7 +144,7 @@ ruleTester.run('multiline', multlineRule, {
 						text-yellow-500"
 					></div>
 				`,
-			errors: [{message: 'Classes should be in multiple lines'}],
+			errors: [{ message: 'Classes should be in multiple lines' }],
 		},
 		{
 			code: `<template>
@@ -163,8 +163,8 @@ ruleTester.run('multiline', multlineRule, {
 						"
 					></div>
 				`,
-			options: [{quotesOnNewLine: true}],
-			errors: [{message: 'Classes should be in multiple lines'}],
+			options: [{ quotesOnNewLine: true }],
+			errors: [{ message: 'Classes should be in multiple lines' }],
 		},
 	],
 });
@@ -177,6 +177,9 @@ ruleTester.run('sort', sortRule, {
 		{
 			code: '<template><div class="grid grid-cols-2"></div></template>',
 		},
+		{
+			code: '<template><div class="grid grid-cols-2 [--strategy:static] [--trigger:hover]"></div></template>',
+		},
 	],
 	invalid: [
 		{
@@ -187,6 +190,11 @@ ruleTester.run('sort', sortRule, {
 		{
 			code: '<template><div class="grid-cols-2 grid"></div></template>',
 			output: '<template><div class="grid grid-cols-2"></div></template>',
+			errors: [{ message: 'Classes are not sorted' }],
+		},
+		{
+			code: '<template><div class=" [--strategy:static] grid-cols-2 [--trigger:hover] grid "></div></template>',
+			output: '<template><div class="grid grid-cols-2 [--strategy:static] [--trigger:hover]"></div></template>',
 			errors: [{ message: 'Classes are not sorted' }],
 		},
 		{

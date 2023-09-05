@@ -229,6 +229,18 @@ class Tailwind {
 
 		const classListClone = [...this.classesList];
 
+		/**
+		 * Get bracketed classes.
+		 * Library like https://preline.co/ uses this syntax `[--trigger:hover]`
+		 * which causes the regex to break.
+		 */
+		const bracketedClasses = classListClone.filter((className) => {
+			return className.startsWith('[') && className.endsWith(']');
+		});
+
+		// remove bracketed classes from the list
+		this.removeFromArray(this.classesList, bracketedClasses);
+
 		// Loop through the classes and get classnames without any prefixes
 		this.classesList.forEach((className) => {
 			const canProceed = this.shouldSortClass(className);

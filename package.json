@@ -2,7 +2,7 @@
 	"name": "@kalimahapps/eslint-plugin-tailwind",
 	"description": "Provide eslint rules for tailwindcss",
 	"author": "khr2003",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/kalimahapps/eslint-plugin-tailwind.git"
