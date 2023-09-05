@@ -66,7 +66,7 @@ class TailwindMultiLine {
 	 * @param  {Array}  classes List of classes to join
 	 * @return {string}         Joined classes
 	 */
-	/* eslint complexity: ["warn", 8] */
+	/* eslint complexity: ["warn", 9] */
 	joinClasses(classes) {
 		const { options } = this.context;
 		const { maxLen: maxLength = 80, quotesOnNewLine = false } = options[0] || {};
