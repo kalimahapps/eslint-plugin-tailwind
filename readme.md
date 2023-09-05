@@ -75,10 +75,10 @@ module.exports = {
 		"warn",
 		{
 			"maxLen": 100,
-      "quotesOnNewLine": true
+			"quotesOnNewLine": true
 		}
 	]
-	}
+ }
 }
 ```
 
