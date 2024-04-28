@@ -2,12 +2,14 @@ import { it, expect } from 'vitest';
 const { RuleTester } = require('eslint');
 const multlineRule = require('../rules/multiline');
 const sortRule = require('../rules/sort');
+const parser = require('vue-eslint-parser');
+
 const ruleTester = new RuleTester({
-	parserOptions: {
+	languageOptions: {
 		ecmaVersion: 6,
 		sourceType: 'module',
+		parser,
 	},
-	parser: require.resolve('vue-eslint-parser'),
 });
 
 ruleTester.run('multiline', multlineRule, {
