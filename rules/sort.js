@@ -96,12 +96,12 @@ class Tailwind {
 	 */
 	removeFromArray(targetArray, item) {
 		const itemsToRemove = Array.isArray(item) ? item : [item];
-		itemsToRemove.forEach((itemToRemove) => {
+		for (const itemToRemove of itemsToRemove) {
 			const index = targetArray.indexOf(itemToRemove);
 			if (index > -1) {
 				targetArray.splice(index, 1);
 			}
-		});
+		}
 	}
 
 	/**
@@ -242,10 +242,10 @@ class Tailwind {
 		this.removeFromArray(this.classesList, bracketedClasses);
 
 		// Loop through the classes and get classnames without any prefixes
-		this.classesList.forEach((className) => {
+		for (const className of this.classesList) {
 			const canProceed = this.shouldSortClass(className);
 			if (canProceed === false) {
-				return;
+				continue;
 			}
 
 			this.sortedClasses.push(className);
@@ -279,18 +279,18 @@ class Tailwind {
 			const relatedClasses = this.getRelatedClasses(className);
 
 			if (relatedClasses === false) {
-				return;
+				continue;
 			}
 
 			// Loop through predefined classes and check if they exist
-			relatedClasses.forEach((relatedClass) => {
+			for (const relatedClass of relatedClasses) {
 				const getRelatedClasses = classListClone.filter((className) => {
 					const regex = new RegExp(`^(!|-)*([A-Za-z]+:)*${relatedClass}`, 'u');
 					return className.match(regex) !== null;
 				});
 
 				if (getRelatedClasses.length === 0) {
-					return;
+					continue;
 				}
 
 				// Sort classes by breakpoint, smallest to largest
@@ -300,8 +300,8 @@ class Tailwind {
 				this.skipClasses.push(...sortedRelatedClasses);
 
 				this.removeFromArray(classListClone, getRelatedClasses);
-			});
-		});
+			}
+		}
 
 		if (classListClone.length === 0) {
 			this.sortedClasses = this.sortedClasses.join(this.space);
@@ -346,11 +346,11 @@ module.exports = {
 		fixable: 'code',
 	},
 	create: (context) => {
-		if (context.parserServices.defineTemplateBodyVisitor === undefined) {
+		if (context.sourceCode.parserServices.defineTemplateBodyVisitor === undefined) {
 			return {};
 		}
 
-		return context.parserServices.defineTemplateBodyVisitor(
+		return context.sourceCode.parserServices.defineTemplateBodyVisitor(
 
 			// Event handlers for <template>.
 			{

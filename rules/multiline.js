@@ -171,13 +171,23 @@ module.exports = {
 			recommended: true,
 		},
 		fixable: 'code',
+		schema: [
+			{
+				type: 'object',
+				properties: {
+					maxLen: { type: 'number' },
+					quotesOnNewLine: { type: 'boolean' },
+				},
+				additionalProperties: false,
+			},
+		],
 	},
 	create: (context) => {
-		if (context.parserServices.defineTemplateBodyVisitor === undefined) {
+		if (context.sourceCode.parserServices.defineTemplateBodyVisitor === undefined) {
 			return {};
 		}
 
-		return context.parserServices.defineTemplateBodyVisitor(
+		return context.sourceCode.parserServices.defineTemplateBodyVisitor(
 
 			// Event handlers for <template>.
 			{

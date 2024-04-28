@@ -29,8 +29,8 @@
 <br>
 
 ## ✨ Rules
-- `@kalimahapps/tailwind/tailwind-sort`: Sort tailwind classes in alphabetical order in groups
-- `@kalimahapps/tailwind/tailwind-multiline`: Break tailwind classes into multiple lines if they exceed the max line length (default: 80)
+- `tailwind-sort`: Sort tailwind classes in alphabetical order in groups
+- `tailwind-multiline`: Break tailwind classes into multiple lines if they exceed the max line length (default: 80)
 
 <br>
 <br>
@@ -50,39 +50,56 @@ npm install eslint @kalimahapps/eslint-plugin-tailwind -D
 <br>
 
 ## 🔧 Usage
-Add this to your `.eslintrc.js` file
+Create eslint.config.js file (or eslint.config.mjs for esm, or eslint.config.cjs for commonjs) in the root of your project and add this
 
 ```js
-module.exports = {
- "plugins": ["@kalimahapps/eslint-plugin-tailwind"],
- "rules": {
-	"@kalimahapps/tailwind/sort": "warn",
-	"@kalimahapps/tailwind/multiline": "warn"
-	}
-}
+import kalimahAppsTailwind from '@kalimahapps/eslint-plugin-tailwind';
+
+export default [
+	{
+		plugins: {
+			kalimahAppsTailwind,
+		},
+		rules: {
+			'kalimahAppsTailwind/sort': 'warn',
+			'kalimahAppsTailwind/multiline': 'warn',
+		},
+	},
+]
 ```
 
 The following options can be set to the mutiline rule:
 - `maxLen`: break classes as soon as the line length is longer than this (and join if the line is smaller)
 - `quotesOnNewLine`: put the quotes on different lines to the first and last class
 
+> Please note that the indentation of for the classes in multiline rule will follow the indentation of the parent. i.e. spaces will be used if the parent is using spaces and tabs will be used if the parent is using tabs
+
+
+
 ```js
-module.exports = {
- "plugins": ["@kalimahapps/eslint-plugin-tailwind"],
- "rules": {
-	"@kalimahapps/tailwind/sort": "warn",
-	"@kalimahapps/tailwind/multiline": [
-		"warn",
-		{
-			"maxLen": 100,
-			"quotesOnNewLine": true
-		}
-	]
- }
-}
+import kalimahAppsTailwind from '@kalimahapps/eslint-plugin-tailwind';
+
+export default [
+	{
+		plugins: {
+			kalimahAppsTailwind,
+		},
+		rules: {
+			'kalimahAppsTailwind/sort': 'warn',
+			'kalimahAppsTailwind/multiline': [
+				'warn',
+				{
+					maxLen: 100,
+					quotesOnNewLine: true,
+				},
+			],
+		},
+	},
+]
 ```
 
-To enable automatic formatting add this to your .vscode/settings.json file
+### VSCode integration
+Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension in VSCode and add this to your .vscode/settings.json file
 ```json
 {
  	"prettier.enable": false,
@@ -97,7 +114,11 @@ To enable automatic formatting add this to your .vscode/settings.json file
 		"javascript",
 		"javascriptreact",
 		"typescript",
-		"typescriptreact"
+		"typescriptreact",
+		"json",
+		"jsonc",
+		"json5",
+		"vue"
 	],
 }
 ```
@@ -106,8 +127,6 @@ You need to install ESLint extension in VSCode. You can find it [here](https://m
 
 <br>
 <br>
-
-> Please note that the indentation of for the classes in multiline rule will follow the indentation of the parent. i.e. spaces will be used if the parent is using spaces and tabs will be used if the parent is using tabs
 
 
 ## Other projects
